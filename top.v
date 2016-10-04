@@ -1,29 +1,12 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    19:11:12 10/03/2016 
-// Design Name: 
-// Module Name:    top 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module top(clk, bcdl, segment, an0, dp);
 	 input clk;
 	 input wire [7:0] bcdl;
 	 output reg [6:0] segment;
 	 output reg [3:0] an0;
 	 output reg dp;
+
 		
 	 reg [16:0]count;
 	 
@@ -31,7 +14,7 @@ module top(clk, bcdl, segment, an0, dp);
 	 wire [6:0] sseg3;
 	
 	initial begin
-		dp = 1'b0;
+	 dp = 1'b1;
 	end
 	
 	always @ (posedge clk)
@@ -44,7 +27,8 @@ module top(clk, bcdl, segment, an0, dp);
 	
 	always @ (*)
 	begin
-		case(count[15:14]) 		 
+		dp <= 1'b1;
+		case(count[13:12]) 		 
 		2'b00:  
 		 begin
 		 segment = sseg2;
@@ -53,8 +37,8 @@ module top(clk, bcdl, segment, an0, dp);
 		 
 		2'b01:  
 		 begin
-		  an0 = 4'b1101;
 		  segment = sseg3;
+		  an0 = 4'b1101;
 		 end
 		 
 		2'b10:  
