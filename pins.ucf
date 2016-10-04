@@ -1,0 +1,24 @@
+NET "clk"	LOC = "B8";
+
+NET "bcdl[7]" LOC = "R17";
+NET "bcdl[6]" LOC = "N17";
+NET "bcdl[5]" LOC = "L13";
+NET "bcdl[4]" LOC = "L14";
+NET "bcdl[3]" LOC = "K17";
+NET "bcdl[2]" LOC = "K18";
+NET "bcdl[1]" LOC = "H18";
+NET "bcdl[0]" LOC = "G18";
+
+NET "segment[6]"      LOC = "L18";   #  name = CA
+NET "segment[5]"      LOC = "F18";   #  name = CB
+NET "segment[4]"      LOC = "D17";   #  name = CC
+NET "segment[3]"      LOC = "D16";   #  name = CD
+NET "segment[2]"      LOC = "G14";   #  name = CE
+NET "segment[1]"      LOC = "J17";   #  name = CF
+NET "segment[0]"      LOC = "H14";   #  name = CG
+NET "dp"     			 LOC = "C17";   #  name = DP
+
+NET "an0[0]"			LOC = "F17";
+NET "an0[1]"			LOC = "H17";
+NET "an0[2]"			LOC = "C18";
+NET "an0[3]"			LOC = "F15";

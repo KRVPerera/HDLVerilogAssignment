@@ -1,0 +1,13 @@
+NET "bcd[3]" LOC = "K17";
+NET "bcd[2]" LOC = "K18";
+NET "bcd[1]" LOC = "H18";
+NET "bcd[0]" LOC = "G18";
+
+
+NET "segment[6]"      LOC = "L18";   #  name = CA
+NET "segment[5]"      LOC = "F18";   #  name = CB
+NET "segment[4]"      LOC = "D17";   #  name = CC
+NET "segment[3]"      LOC = "D16";   #  name = CD
+NET "segment[2]"      LOC = "G14";   #  name = CE
+NET "segment[1]"      LOC = "J17";   #  name = CF
+NET "segment[0]"      LOC = "H14";   #  name = CG
