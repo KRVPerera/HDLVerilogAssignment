@@ -30,8 +30,12 @@ module top(clk, bcdl, ssego, an0);
 	 
 	reg [6:0] sseg0; 
 	reg [6:0] sseg1; 
-	reg [6:0] sseg2; 
-	reg [6:0] sseg3; 
+	wire [6:0] sseg2; 
+	wire [6:0] sseg3;
+	
+	assign sseg0 = sseg2;
+	assign sseg1 = sseg3;
+
 	 
 	always @ (posedge clk)
 	begin
@@ -59,13 +63,13 @@ module top(clk, bcdl, ssego, an0);
     
    2'b10:  //When the 2 MSB's are 10 enable the second display
     begin
-	  ssego = sseg2;
+	  ssego = sseg0;
      an0 = 4'b1011;
     end
      
    2'b11:  //When the 2 MSB's are 11 enable the first display
     begin
-	  ssego = sseg3;
+	  ssego = sseg1;
      an0 = 4'b0111;
     end
 		endcase
@@ -74,25 +78,25 @@ module top(clk, bcdl, ssego, an0);
 	
 	BCDtoSevenseg bcds0 (
 		.bcd(bcdl[3:0]),
-		.segment(sseg0)
+		.seg(sseg2)
 	);
 	
 	BCDtoSevenseg bcds1 (
 		.bcd(bcdl[7:4]),
-		.segment(sseg1)
+		.seg(sseg3)
 	);
 	
-		BCDtoSevenseg bcds2(
-		.bcd(bcdl[3:0]),
-		.segment(sseg3)
-	);
-
-
-
-	BCDtoSevenseg bcds3 (
-		.bcd(bcdl[7:4]),
-		.segment(sseg4)
-	);
+//		BCDtoSevenseg bcds2(
+//		.bcd(bcdl[3:0]),
+//		.segment(sseg3)
+//	);
+//
+//
+//
+//	BCDtoSevenseg bcds3 (
+//		.bcd(bcdl[7:4]),
+//		.segment(sseg4)
+//	);
 
 
 endmodule
