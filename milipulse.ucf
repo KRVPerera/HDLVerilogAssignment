@@ -1,0 +1,5 @@
+NET "clk"		LOC = "B8";
+NET "start" 	LOC = "G18";
+NET "stop" 		LOC = "H18";
+NET "reset" 	LOC = "K18";
+NET "led" 	LOC = "J14";

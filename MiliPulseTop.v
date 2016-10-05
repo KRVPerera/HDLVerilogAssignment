@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    16:25:03 10/04/2016 
+// Create Date:    16:20:32 10/05/2016 
 // Design Name: 
-// Module Name:    OneBit 
+// Module Name:    MiliPulseTop 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,21 +18,16 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module OneBit(bcd, segment, an);
-
-	 input [3:0] bcd;
-    output reg [6:0] segment;
-	 wire [6:0] sseg;
-	 output reg [3:0] an;
+module MiliPulseTop(clk, start, stop, reset, led);
+	 input clk, start, stop, reset;
+    output led;
 	 
-	always @(*) begin
-		segment <= sseg;
-		an <= 4'b1110;
-	end
-	 
-	BCDtoSevenseg bcd7(
-		.bcd(bcd),
-		.segment(sseg)
-	);
+	 mspulse mspulse0 (
+		.clk(clk),
+		.start(start),
+		.stop(stop),
+		.reset(reset),
+		.msclock(led)
+	 );
 
 endmodule

@@ -24,24 +24,27 @@ module bcd_digit(clk, c_in, reset, digit, c_out);
    input c_in;
    input reset;
    output reg [3:0] digit;
-   output c_out;
+   output reg c_out = 0;
 
 	initial digit = 0;
 	
-	assign c_out = c_in && digit == 9;
-	
 	always @(posedge clk)
 	begin
+	 c_out <= (c_in && digit == 4'b1000) || (digit == 4'b1001);
+
     if (reset)
 		begin
 			digit <= 0;
+			c_out <= 0;
 		end
-    else if (c_in)
+	 else if (c_out)
 		begin
-			if (c_out)
-				digit <= 0;
+			digit <= 0;
+			c_out <= 0;
 		end
 	 else
-		digit <= digit+1;
+		begin
+			digit <= digit+1;
+		end
 	end
 endmodule

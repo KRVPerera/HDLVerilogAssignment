@@ -1,0 +1,29 @@
+Command line:
+   TestMilispulse_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  4001
+
+Wed Oct 05 16:18:51 2016
+
+
+ Elaboration Time: 0.140625 sec
+
+ Current Memory Usage: 1022.65 Meg
+
+ Total Signals          : 18
+ Total Nets             : 18
+ Total Signal Drivers   : 10
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 14
+ Total Traceable Variables  : 24
+ Total Scalar Nets and Variables : 135
+Total Line Count : 40
+
+ Total Simulation Time: 0.15625 sec
+
+ Current Memory Usage: 1022.65 Meg
+
+Wed Oct 05 16:18:59 2016
+

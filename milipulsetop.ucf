@@ -1,3 +1,4 @@
+NET "clk"	LOC = "B8";
 NET "bcd[3]" LOC = "K17";
 NET "bcd[2]" LOC = "K18";
 NET "bcd[1]" LOC = "H18";
