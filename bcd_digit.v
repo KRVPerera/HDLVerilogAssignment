@@ -28,20 +28,20 @@ module bcd_digit(clk, c_in, reset, digit, c_out);
 
 	initial digit = 0;
 	
-	assign carry_out = carry_in && digit == 9;
+	assign c_out = c_in && digit == 9;
 	
 	always @(posedge clk)
+	begin
     if (reset)
 		begin
 			digit <= 0;
 		end
-    else if (carry_in)
+    else if (c_in)
 		begin
-      if (carry_out)
-			digit <= 0;
-		
-      else
-			digit <= digit+1;
+			if (c_out)
+				digit <= 0;
+		end
 	 else
 		digit <= digit+1;
+	end
 endmodule

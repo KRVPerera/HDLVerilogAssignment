@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: University of Moratuwa - Integrated Computer Engineering
+// Engineer: K.R.V. Perera
 // 
 // Create Date:    17:04:56 10/04/2016 
 // Design Name: 
 // Module Name:    StopWatch 
 // Project Name: 
-// Target Devices: 
+// Target Devices: Nexsys2
 // Tool versions: 
 // Description: 
 //

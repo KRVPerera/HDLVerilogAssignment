@@ -1,10 +1,28 @@
 `timescale 1ns / 1ps
-
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    18:02:05 10/04/2016 
+// Design Name: 
+// Module Name:    bcd_digit 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 1.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module BCDtoSevenseg(bcd, segment);
 	 input [3:0] bcd;
     output reg [6:0] segment;
 	 
-	 always @(*)
+	 always @(bcd)
     begin
         case (bcd) //case statement
             0 : segment = 7'b0000001;
