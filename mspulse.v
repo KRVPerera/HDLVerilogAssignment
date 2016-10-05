@@ -1,20 +1,20 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: University of Moratuwa - Integrated Computer Engineering
+// Engineer: K.R.V. Perera
 // 
 // Create Date:    14:50:52 10/05/2016 
 // Design Name: 
 // Module Name:    mspulse 
 // Project Name: 
-// Target Devices: 
+// Target Devices: Nexsys2
 // Tool versions: 
-// Description: 
+// Description: Generate milisecond pulses for a 50 MHz clock
 //
 // Dependencies: 
 //
 // Revision: 
-// Revision 0.01 - File Created
+// Revision 1.01 - Tested
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
@@ -32,12 +32,10 @@ always @ (posedge clk)
 			begin
 				started <= 1;
 			end
-		
 		else if (stop)
 			begin
 				started <= 0;		
 			end
-	
 		if(started)
 			begin
 				if (count == 49999)
@@ -50,8 +48,6 @@ always @ (posedge clk)
 						count <= count + 1;	
 						msclock <= 0;
 					end
-			end
-
-		
+			end		
 	end	
 endmodule

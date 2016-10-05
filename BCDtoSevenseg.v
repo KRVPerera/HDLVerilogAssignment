@@ -1,27 +1,26 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: University of Moratuwa - Integrated Computer Engineering
+// Engineer: K.R.V. Perera
 // 
 // Create Date:    18:02:05 10/04/2016 
 // Design Name: 
 // Module Name:    bcd_digit 
 // Project Name: 
-// Target Devices: 
+// Target Devices: Nexsys2
 // Tool versions: 
 // Description: 
 //
-// Dependencies: 
+// Dependencies: Convert 0-9 digits to seven segment output
 //
 // Revision: 
-// Revision 1.01 - File Created
+// Revision 1.01 - Tested
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
 module BCDtoSevenseg(bcd, segment);
 	 input [3:0] bcd;
     output reg [6:0] segment;
-	 
 	 always @(bcd)
     begin
         case (bcd) //case statement

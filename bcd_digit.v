@@ -1,20 +1,20 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: University of Moratuwa - Integrated Computer Engineering
+// Engineer: K.R.V. Perera
 // 
 // Create Date:    18:02:05 10/04/2016 
 // Design Name: 
 // Module Name:    bcd_digit 
 // Project Name: 
-// Target Devices: 
+// Target Devices: Nexsys2
 // Tool versions: 
 // Description: 
 //
 // Dependencies: 
 //
 // Revision: 
-// Revision 0.01 - File Created
+// Revision 2.00 - Reset removed
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
