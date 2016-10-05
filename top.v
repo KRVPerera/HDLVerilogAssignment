@@ -1,5 +1,23 @@
 `timescale 1ns / 1ps
-
+//////////////////////////////////////////////////////////////////////////////////
+// Company: University of Moratuwa - Integrated Computer Engineering
+// Engineer: K.R.V. Perera
+// 
+// Create Date:    18:02:05 10/04/2016 
+// Design Name: 
+// Module Name:    top 
+// Project Name: 
+// Target Devices: Nexsys2
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 4 - 4 buttons to map four seven segment displays
+//
+// Revision: 
+// Revision 1.01 - Tested
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module top(clk, bcdl, segment, an0, dp);
 	 input clk;
 	 input wire [7:0] bcdl;
@@ -7,7 +25,6 @@ module top(clk, bcdl, segment, an0, dp);
 	 output reg [3:0] an0;
 	 output reg dp;
 
-		
 	 reg [16:0]count;
 	 
 	 wire [6:0] sseg2; 
@@ -55,7 +72,6 @@ module top(clk, bcdl, segment, an0, dp);
 		
 		endcase
 	end
-	
 	
 	BCDtoSevenseg bcds0 (
 		.bcd(bcdl[3:0]),
