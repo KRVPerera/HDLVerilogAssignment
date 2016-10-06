@@ -21,16 +21,14 @@
 module bcd_digit(clk, reset, digit, c_out);
 	
 	input clk;
-   //input c_in;
    input reset;
    output reg [3:0] digit;
    output reg c_out = 0;
 
 	initial digit = 0;
 	
-	always @(posedge clk or posedge reset)
+	always @(negedge clk or posedge reset)
 	begin
-	 	//c_out <= (c_in && digit == 4'b1000) || (digit == 4'b1001);
 		c_out <= (digit == 4'b1000);
 
     if (reset)

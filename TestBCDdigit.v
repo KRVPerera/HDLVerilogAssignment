@@ -26,26 +26,32 @@ module TestBCDdigit;
 
 	// Inputs
 	reg clk;
-	reg c_in;
 	reg reset;
 
 	// Outputs
 	wire [3:0] digit;
+	wire [3:0] digit2;
 	wire c_out;
+	wire c_out2;
 
 	// Instantiate the Unit Under Test (UUT)
 	bcd_digit uut (
 		.clk(clk), 
-		.c_in(c_in), 
 		.reset(reset), 
 		.digit(digit), 
 		.c_out(c_out)
 	);
 
+	bcd_digit uut2 (
+		.clk(c_out), 
+		.reset(reset), 
+		.digit(digit2), 
+		.c_out(c_out2)
+	);
+	
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		c_in = 1;
 		reset = 0;
 
 		// Wait 100 ns for global reset to finish
