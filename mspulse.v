@@ -19,9 +19,11 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module mspulse(clk, start, stop, msclock);
+	 
+	 parameter MAX_COUNT = 49999;
+	 
 	 input clk, start, stop;
     output reg msclock = 0;
-	 
 	 integer started = 0;
 	 integer count;
 	
