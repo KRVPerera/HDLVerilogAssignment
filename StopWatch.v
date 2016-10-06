@@ -30,7 +30,7 @@ module StopWatch(start, stop, reset, clk, segment, an, dp);
 	 
 	 wire ms_pulse;
 	 
-	 reg [16:0]count;
+	 reg [14:0]count;
 	 
 	 wire [6:0] sseg0;
 	 wire [6:0] sseg1;
@@ -47,14 +47,17 @@ module StopWatch(start, stop, reset, clk, segment, an, dp);
 	 wire digit2_cout;
 	 wire digit3_cout;
 		
-	reg fc_in = 0;
+	//reg fc_in = 0;
 
-	mspulse milispulse(
+	mspulse #(
+				.MAX_COUNT(49999)
+			  ) 
+		milispulse(
 		.clk(clk),
 		.start(start),
 		.stop(stop),
 		.msclock(ms_pulse)
-	);
+		);
 	
 	always @ (posedge clk)
 	begin
@@ -64,8 +67,8 @@ module StopWatch(start, stop, reset, clk, segment, an, dp);
 	always @ (*)
 	begin
 		dp <= 1'b1;
-		fc_in <= 0;
-		case(count[13:12]) 		 
+		//fc_in <= 0;
+		case(count[14:13]) 		 
 			2'b00:  
 			 begin
 				 segment = sseg0;
@@ -92,46 +95,10 @@ module StopWatch(start, stop, reset, clk, segment, an, dp);
 		endcase
 	end
 	
-	
-	bcd_digit digi_module_0 (
-	 .clk(ms_pulse),
-	 .c_in(fc_in), 
-	 .reset(reset), 
-	 .digit(digi0w), 
-	 .c_out(digit0_cout)
-	);
-	
 	BCDtoSevenseg bcds0 (
 		.bcd(digi0w),
 		.segment(sseg0)
 	);
-		
-	bcd_digit digi_module_1 (
-	 .clk(digit0_cout),
-	 .c_in(digit0_cout), 
-	 .reset(reset), 
-	 .digit(digi1w), 
-	 .c_out(digit1_cout)
-	);
-	
-	
-	bcd_digit digi_module_2 (
-	 .clk(digit1_cout),
-	 .c_in(digit1_cout), 
-	 .reset(reset), 
-	 .digit(digi2w), 
-	 .c_out(digit2_cout)
-	);
-	
-	bcd_digit digi_module_3 (
-	 .clk(digit2_cout),
-	 .c_in(digit2_cout), 
-	 .reset(reset), 
-	 .digit(digi3w), 
-	 .c_out(digit3_cout)
-	);
-	
-
 	
 	BCDtoSevenseg bcds1 (
 		.bcd(digi1w),
@@ -148,4 +115,36 @@ module StopWatch(start, stop, reset, clk, segment, an, dp);
 		.segment(sseg3)
 	);
 
+	bcd_digit digi_module_0 (
+	 .clk(ms_pulse),
+	// .c_in(fc_in), 
+	 .reset(reset), 
+	 .digit(digi0w), 
+	 .c_out(digit0_cout)
+	);
+		
+	bcd_digit digi_module_1 (
+	 .clk(digit0_cout),
+	// .c_in(digit0_cout), 
+	 .reset(reset), 
+	 .digit(digi1w), 
+	 .c_out(digit1_cout)
+	);
+	
+	bcd_digit digi_module_2 (
+	 .clk(digit1_cout),
+	// .c_in(digit1_cout), 
+	 .reset(reset), 
+	 .digit(digi2w), 
+	 .c_out(digit2_cout)
+	);
+	
+	bcd_digit digi_module_3 (
+	 .clk(digit2_cout),
+//	 .c_in(digit2_cout), 
+	 .reset(reset), 
+	 .digit(digi3w), 
+	 .c_out(digit3_cout)
+	);
+		
 endmodule
