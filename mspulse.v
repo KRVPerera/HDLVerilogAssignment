@@ -24,20 +24,19 @@ module mspulse(clk, start, stop, msclock);
 	 
 	 input clk, start, stop;
     output reg msclock = 0;
-	 integer started = 0;
+	 reg started = 0;
 	 integer count;
 	
+always @ (posedge start or posedge stop)
+begin
+	if(start)
+		started <= 1'b1;
+	else
+		started <= 1'b0;
+end
 	
 always @ (posedge clk)
 	begin
-		if (start)
-			begin
-				started <= 1;
-			end
-		else if (stop)
-			begin
-				started <= 0;		
-			end
 		if(started)
 			begin
 				if (count == 49999)
