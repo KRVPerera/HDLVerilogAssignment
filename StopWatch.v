@@ -34,9 +34,6 @@ module StopWatch(start, stop, reset, clk, segment, an, dp);
 	 reg [3:0] bcdmain;
 	 
 	 wire [6:0] sseg0;
-//	 wire [6:0] sseg1;
-//	 wire [6:0] sseg2; 
-//	 wire [6:0] sseg3;
 	 
 	 wire [3:0] digi0w;
 	 wire [3:0] digi1w;
