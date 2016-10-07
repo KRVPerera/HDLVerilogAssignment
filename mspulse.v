@@ -14,8 +14,8 @@
 // Dependencies: 
 //
 // Revision: 
-// Revision 1.01 - Tested
-// Additional Comments: 
+// Revision 1.4 - Reviewed
+// Additional Comments: Need to add a delay before making the clock back to zero
 //
 //////////////////////////////////////////////////////////////////////////////////
 module mspulse(clk, start, stop, msclock);
