@@ -1,7 +1,7 @@
 NET "clk"		LOC = "B8";
 
 NET "start" 	LOC = "B18";
-NET "stop" 		LOC = "D18";
+NET "stop" 		LOC = "H13";
 NET "reset" 	LOC = "E18";
 
 

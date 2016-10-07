@@ -18,15 +18,14 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module MiliPulseTop(clk, start, stop, reset, led);
-	 input clk, start, stop, reset;
+module MiliPulseTop(clk, start, stop, led);
+	 input clk, start, stop;
     output led;
 	 
 	 mspulse mspulse0 (
 		.clk(clk),
 		.start(start),
 		.stop(stop),
-		.reset(reset),
 		.msclock(led)
 	 );
 
