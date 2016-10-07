@@ -27,17 +27,18 @@ module TestMilispulse;
 	// Inputs
 	reg clk;
 	reg start;
-	reg reset;
 	reg stop;
 
 	// Outputs
 	wire msclock;
 
 	// Instantiate the Unit Under Test (UUT)
-	mspulse uut (
+	mspulse  #(
+				.MAX_COUNT(20)
+			  ) 
+			   uut (
 		.clk(clk), 
 		.start(start), 
-		.reset(reset), 
 		.stop(stop), 
 		.msclock(msclock)
 	);
@@ -46,13 +47,14 @@ module TestMilispulse;
 		// Initialize Inputs
 		clk = 0;
 		start = 0;
-		reset = 0;
 		stop = 0;
 		
-		$monitor("%d\t%d",clk,msclock); 
+//		$monitor("%d\t%d",clk,msclock); 
 		// Wait 100 ns for global reset to finish
-		#20;
+		#100;
       start = 1;
+		#10
+		start = 0;
 		// Add stimulus here
 
 	end
@@ -60,7 +62,8 @@ module TestMilispulse;
 	always
 	begin
 		#5 clk = !clk;
-		#6 start = !start;
+//		#200 start = !start;
+//		#150 stop = !stop;
 	end
       
 endmodule

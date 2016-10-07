@@ -1,0 +1,29 @@
+Command line:
+   MiliPulseTop_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  7309
+
+Fri Oct 07 12:03:22 2016
+
+
+ Elaboration Time: 0.125 sec
+
+ Current Memory Usage: 868.454 Meg
+
+ Total Signals          : 20
+ Total Nets             : 17
+ Total Signal Drivers   : 6
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 9
+ Total Traceable Variables  : 22
+ Total Scalar Nets and Variables : 163
+Total Line Count : 32
+
+ Total Simulation Time: 0.140625 sec
+
+ Current Memory Usage: 868.454 Meg
+
+Fri Oct 07 12:03:25 2016
+

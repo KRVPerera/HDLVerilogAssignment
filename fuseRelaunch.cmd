@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "D:/HDL/ISE/StopWatchAssignment/TestBCDdigit_isim_beh.exe" -prj "D:/HDL/ISE/StopWatchAssignment/TestBCDdigit_beh.prj" "work.TestBCDdigit" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "D:/HDL/ISE/StopWatchAssignment/mspulse_isim_beh.exe" -prj "D:/HDL/ISE/StopWatchAssignment/mspulse_beh.prj" "work.mspulse" "work.glbl" 

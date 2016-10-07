@@ -14,8 +14,8 @@
 // Dependencies: 
 //
 // Revision: 
-// Revision 1.4 - Reviewed
-// Additional Comments: Need to add a delay before making the clock back to zero
+// Revision 1.9 - Reviewed synchronous design
+// Additional Comments: Need to add a trigger for start and stop
 //
 //////////////////////////////////////////////////////////////////////////////////
 module mspulse(clk, start, stop, msclock);
@@ -26,28 +26,29 @@ module mspulse(clk, start, stop, msclock);
     output reg msclock = 0;
 	 reg started = 0;
 	 integer count;
-	
-always @ (posedge start or posedge stop)
-begin
-	if(start)
-		started <= 1'b1;
-	else
-		started <= 1'b0;
-end
-	
+		
 always @ (posedge clk)
 	begin
-		if(started)
+	if(start)
+		started <= 1'b1;
+	else if(stop)
+		started <= 1'b0;
+	
+	if(started)
 			begin
-				if (count == 49999)
+				if (count == MAX_COUNT)
 					begin
 						count <= 0;
 						msclock <= 1;
 					end
+				else if(count == MAX_COUNT/10)
+					begin
+							msclock <= 0;
+							count <= count + 1;
+					end
 				else
 					begin
 						count <= count + 1;	
-						msclock <= 0;
 					end
 			end		
 	end	
